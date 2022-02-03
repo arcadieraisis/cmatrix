@@ -1,7 +1,7 @@
 const M = [];
 const elM = [];
-const n = 50;
-const m = 50;
+const n = 40;
+const m = 20;
 const grid = document.querySelector(".grid");
 const F = new Array(m);
 
@@ -14,7 +14,7 @@ const generateLetter = () => {
 };
 
 let gridStyle = "";
-for (let i = 0; i < n; i++) gridStyle += "18px ";
+for (let i = 0; i < m; i++) gridStyle += "18px ";
 
 grid.style.gridTemplateColumns = gridStyle;
 
@@ -39,8 +39,8 @@ for (let i = 0; i < n; i++) {
 }
 
 const animate = () => {
-	for (let j = 0; j < m; j++) {
-		for (let i = 0; i < n; i++) {
+	for (let i = 0; i < n; i++) {
+		for (let j = 0; j < m; j++) {
 			const e = M[i][j];
 			const f = F[j];
 
@@ -49,6 +49,7 @@ const animate = () => {
 			if (e.f < 0) {
 				if (i === 0) {
 					e.f = f;
+					F[j] = randomBetween(5, 30);
 				} else {
 					e.f = M[i - 1][j].f + 1;
 				}
@@ -68,4 +69,4 @@ const animate = () => {
 
 setInterval(() => {
 	animate();
-}, 40);
+}, 50);
