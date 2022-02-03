@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: sans-serif;
+			}
+			body {
+				background: black;
+			}
+			.grid {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				color: green;
+				display: grid;
+				overflow: hidden;
+			}
+			.grid div {
+				width: 17.5px;
+				height: 12px;
+				line-height: 1;
+				font-size: 11px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="grid"></div>
+		<script src="./index.js"></script>
+	</body>
+</html>
